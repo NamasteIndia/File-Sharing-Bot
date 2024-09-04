@@ -4,15 +4,11 @@ from plugins import web_server
 import pyromod.listen
 from pyrogram import Client
 from pyrogram.enums import ParseMode
-import pyrogram.utils  # Importing pyrogram.utils
 import sys
 from datetime import datetime
 
 from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT
 
-# Set MIN_CHANNEL_ID based on the CHANNEL_ID from config
-if isinstance(CHANNEL_ID, int) and CHANNEL_ID < 0:
-    pyrogram.utils.MIN_CHANNEL_ID = CHANNEL_ID
 else:
     raise ValueError("CHANNEL_ID must be a negative integer representing a valid Telegram channel ID.")
 
